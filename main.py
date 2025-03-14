@@ -11,11 +11,11 @@ class DouyinVideoPlugin(Star):
     async def on_message(self, event: AstrMessageEvent):
         message_str = event.message_str
         # 检测消息中是否包含抖音视频链接
-        if "<url id=\"cv9ra4vftae0fdkm7cjg\" type=\"url\" status=\"parsed\" title=\"抖音-记录美好生活\" wc=\"442\">https://v.douyin.com/</url>" in message_str:
+        if "<url id=\"cv9rgvf6rtpdidi085g0\" type=\"url\" status=\"parsed\" title=\"抖音-记录美好生活\" wc=\"442\">https://v.douyin.com/</url>" in message_str:
             # 提取抖音视频链接
             douyin_url = re.search(r"https://v\.douyin\.com/\S+", message_str).group()
             # 调用 API 解析抖音视频
-            api_url = f"<url id=\"cv9ra4vftae0fdkm7ck0\" type=\"url\" status=\"parsed\" title=\"\" wc=\"89\">https://api.makuo.cc/api/get.video.douyin</url>?url={douyin_url}"
+            api_url = f"https://api.makuo.cc/api/get.video.douyin?url={douyin_url}"
             headers = {
                 'Authorization': 'raedFk37Z0iixed5132hoA'
             }
